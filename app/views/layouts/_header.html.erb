@@ -7,7 +7,14 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <% if authenticated? %>
-          <div class="align-content-center text-muted"><%= current_user.email_address %></div>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= current_user.email_address %>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">支払い情報</a></li>
+            </ul>
+          </li>
           <%= button_to "ログアウト", session_path, method: :delete, class: 'nav-link' %>
         <% else %>
           <%= link_to "ログイン", new_session_path, class: 'nav-link' %>
