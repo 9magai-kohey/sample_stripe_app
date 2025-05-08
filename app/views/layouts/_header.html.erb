@@ -12,7 +12,7 @@
               <%= current_user.email_address %>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">支払い情報</a></li>
+              <li><%= link_to "支払い情報", billing_path, class: "dropdown-item" %></li>
             </ul>
           </li>
           <%= button_to "ログアウト", session_path, method: :delete, class: 'nav-link' %>
